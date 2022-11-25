@@ -2,7 +2,7 @@ version: "3.7"
 services:
     Nest-Vocab:
         build: .
-        #restart: always
+        restart: always
         ports:
             - "127.0.0.1:3001:3001"
         volumes:
@@ -42,5 +42,5 @@ services:
         entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 networks:
     default:
-        name: "reddit-trends-vue_default"
+        name: "composite_network"
         external: true

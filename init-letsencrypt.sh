@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose -f docker-compose-prod.yml)" ]; then
   exit 1
 fi
 
-domains=api.vocabsitory.site
+domains=api.rtrend.site
 rsa_key_size=4096
 data_path="./certbot"
 email="wilson.chyw@gmail.com" # Adding a valid address is strongly recommended

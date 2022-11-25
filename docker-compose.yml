@@ -3,7 +3,7 @@ services:
     Nest-Vocab:
         build: .
         ports:
-            - "3000:3000"
+            - "3001:3001"
         volumes:
             - ".:/app"
             - "/app/node_modules"
@@ -11,7 +11,7 @@ services:
         image: nest-vocab
         environment:
             LD_LIBRARY_PATH: "/opt/oracle/instantclient_19_10"
-        container_name: nest-vocab
+        container_name: nest-vocab-dev
     redis:
         restart: always
         container_name: redis

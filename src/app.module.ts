@@ -8,7 +8,7 @@ import { VocabModule } from "src/database/vocab.module";
 import { DatabaseModule } from "./database/database.module";
 //import { ValidationPipe } from 'src/validation/validation.pipe';
 import { AuthMiddleware } from "./middleware/auth.middleware";
-
+import { Logger } from "./middleware/logger.middleware";
 @Module({
     imports: [DatabaseModule, VocabModule, AuthModule, RedisCacheModule, UserModule],
     controllers: [VocabController, UserController, ExportController],
@@ -17,5 +17,6 @@ import { AuthMiddleware } from "./middleware/auth.middleware";
 export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer.apply(AuthMiddleware).forRoutes("vocab");
+        //consumer.apply(Logger).forRoutes("vocab");
     }
 }

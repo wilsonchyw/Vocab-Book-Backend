@@ -8,4 +8,5 @@ RUN echo /opt/oracle/instantclient* > /etc/ld.so.conf.d/oracle-instantclient.con
 
 COPY package*.json ./
 RUN npm install
+
 CMD ["npm","run","start"]
